@@ -45,7 +45,7 @@ nav,
 
 nav {
     justify-content: space-between;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -64,6 +64,10 @@ nav {
     color: darkolivegreen;
 }
 
+.main-nav .exit-btn {
+    display: none;
+}
+
 .main-nav li a:hover {
     cursor: pointer;
     color: olive;
@@ -73,10 +77,6 @@ nav {
     font-size: 1.4em;
     font-weight: 600;
 }
-
-
-
-
 
 /* ===== Intro Content Layout ===== */
 
@@ -89,7 +89,7 @@ nav {
 
 .intro h2,
 .intro h3 {
-    margin: 0;
+    margin: 0 auto;
 }
 
 .intro h2 {
@@ -104,14 +104,14 @@ nav {
 
 .intro p {
     width: 80%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 10px auto;
     font-style: italic;
 }
 
 /* ===== Main Content Layout ===== */
 .container {
-    max-width: 1400;
+    max-width: 1200px;
     margin: 20px auto;
     
 }
@@ -130,7 +130,7 @@ nav {
 }
 
 .post {
-    width: 600px;
+    width: 550px;
     margin: 0;
     margin-bottom: 20px;
     padding: 10px 0;
@@ -169,6 +169,39 @@ nav {
     cursor: pointer;
 }
 
+/* ===== Hidden Content Layout ===== */
+
+.no-display {
+    display: none;
+}
+
+.see-more {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 10px;
+}
+
+.see-more:hover, 
+.more-btn:hover {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.more-btn {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    background-color: transparent;
+    color: whitesmoke;
+    outline: none;
+}
+
+.style-arrow {
+    color: white;
+    transform: rotate(90deg);
+    margin-top: 5px;
+}
+
 
 /* =============================
     Media Queries
@@ -202,25 +235,52 @@ nav {
         margin-right: 50px;
     }
 
-    header {
-        position:relative;
+    main {
+        padding-top: 73.84px;
     }
 
     .main-nav {
         display: none;
     }
 
-    .post figcaption {
-        font-size: 1em;
+    .show-menu {
+        display: block;
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        width: 40vw;
+        background-color: rgba(221, 195, 195, 0.938);
+        padding: 0;
+        margin-top: 73.84px;
+        font-size: .9em;
+    }
+
+    .show-menu li {
+        margin: 15px;
+        margin-top: 0;
+    }
+
+    .show-menu .exit-btn {
+        display: block;
+        margin: 10px 15px 0 auto;
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        outline: 0;
+    }
+
+    .show-menu .exit-btn:hover {
+        cursor: pointer;
     }
 
     .container h3 {
         font-size: 1.3em;
     }
 
-    main {
-        padding-top: 0;
+    .post figcaption {
+        font-size: 1em;
     }
+    
 }
 
 @media only screen and (max-width: 500px) {
@@ -235,6 +295,14 @@ nav {
 
     #hamburger {
         margin-left: 20px;
+    }
+
+    .show-menu {
+        margin-top: 69.19px;
+    }
+
+    main {
+        padding-top: 69.19px;
     }
 
     .intro {
